@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    //font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", \5FAE\8F6F\96C5\9ED1, Sans-serif, STHeiti !important;
+}
+
+div#setting
+{
+    display: none;
+    cursor: default;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    margin-left: -200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    background: #e6e6e6;
+
+    -webkit-box-shadow: 0 0 18x 1px #bbb;
+    -moz-box-shadow: 0 0 18px 1px #bbb;
+    box-shadow: 0 0 18px 1px #bbb;
+}
+
+div#setting img
+{
+    cursor: pointer;
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    margin-top: -15px;
+}
+
+div#setting img:hover
+{
+    padding-bottom: 15px;
+    top: 40%;
+}
+
+form#settingDetail p
+{
+    display: inline-block;
+    //position: relative; top: 2px;//chrome align checkbox、radio and text with <p>
+}
+
+input#search
+{
+    height: 40px;
+    width: 500px;
+    font-size: 1em;
+    padding: 0 10px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -250px;
+    box-sizing: border-box;
+}
+
+input:focus
+{
+    outline: 1px solid #e69622;
+}
+
+/*-----------KEYBOARD START-----------*/
+
+div#keyboard
+{
+    width: 860px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    margin-left: -430px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div#keyboardPad
+{
+    opacity: .8;
+    border-radius: 58px;
+    background-color: #eee;
+    width: 860px;
+    height: 320px;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    margin-left: -430px;
+
+    -webkit-filter: blur(10px);
+}
+
+div#keyboard ul
+{
+    padding: 0;
+    margin: 10;
+    height: 50px;
+    text-align: center;
+    display: block;
+}
+
+div#keyboard ul span
+{
+    position: relative;
+    display: inline-block;
+    margin: 0 4px;
+    height: 54px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 1px 0px #eee;
+    -moz-box-shadow: inset 0 0 1px 0px #eee;
+    box-shadow: inset 0 0 1px 0px #eee;
+}
+
+div#keyboard ul li
+{
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0px 2px;
+    padding: 16px 22px;
+    background: #999;
+    border-radius: 8px;
+    display: inline-block;
+    list-style: none;
+    border-top: 1px solid #fff;
+    background: #fff;
+    -webkit-box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
+    -moz-box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
+    box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
+}
+
+div#keyboard ul span:hover,div#keyboard ul span.keyDownSpan
+{
+    margin: 0px 5px;
+    border-bottom: 3px solid #fff;
+    box-shadow: inset 0 0px 8px #333;
+    -moz-box-shadow: inset 0 0px 8px #333;
+    -webkit-box-shadow: inset 0 0px 8px #333;
+}
+
+div#keyboard ul span:hover li, div#keyboard ul span li.keyDownLi
+{
+    padding: 15px 20px 16px;
+    margin: 1px 3px 0px;
+    border-top: 1px solid #fafafa;
+    -webkit-box-shadow: inset 0 0 28px 5px #d2d2d2;
+    -moz-box-shadow: inset 0 0 28px 5px #d2d2d2;
+    box-shadow: inset 0 0 28px 5px #d2d2d2;
+
+    -webkit-transform:scale(.98);
+    -moz-transform:scale(.98);
+    -o-transform:scale(.98);
+}
+
+img.fav
+{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    opacity: .3;
+}
+
+div.keySetting
+{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -120%;
+    margin-left: -50px;
+    width: 100px;
+    height: 60px;
+    border-radius: 20px;
+    background: #e6e6e6;
+
+    -webkit-box-shadow: 0 0 18x 1px #bbb;
+    -moz-box-shadow: 0 0 18px 1px #bbb;
+    box-shadow: 0 0 18px 1px #bbb;
+}
+
+div.keySettingFix
+{
+    position: absolute;
+    top: -12%;
+    width: 64px;
+    height: 10px;
+    left: 50%;
+    margin-left: -32px;
+}
+
+div.keySetting img
+{
+    margin: 8px 2px 10px;
+    padding: 8px;
+}
+
+div.keySetting img:hover
+{
+    cursor: pointer;
+    margin: 0px 2px 10px;
+    padding: 8px 8px 16px;
+}
+
+/*-----------KEYBOARD END-----------*/
+
+img#keyboardBg
+{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*this is for plugin
+div.attention
+{
+    position: absolute;
+    bottom: 39px;
+    left: 76%;
+    margin-left: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: #faa;
+    border-radius: 6px;
+
+    -webkit-box-shadow: 0 0 8x #f00;
+    -moz-box-shadow: 0 0 8px #f00;
+    box-shadow: 0 0 8px #f00;
+
+    transition: all 1.5s cubic-bezier(.4,.6,.4,.6);
+    -webkit-transition: all 1.5s cubic-bezier(.4,.6,.4,.6);
+    -moz-transition: all 1.5s cubic-bezier(.4,.6,.4,.6);
+    -o-transition: all 1.5s cubic-bezier(.4,.6,.4,.6);
+}
+
+div.attentionBlink
+{
+    opacity: .1;
+}*/
