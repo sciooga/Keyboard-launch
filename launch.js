@@ -50,6 +50,7 @@ function openURL(u){
 /*-----------USESETTING START-----------*/
 var now_searchEngineURL;// = 'https://www.baidu.com/baidu';
 var now_searchEnginePOST;// = 'word';
+var now_backgroundURL;
 function useSetting(){
     newWindow = getCookie('newWindow');
     var now_searchEngine = getCookie('searchEngine');
@@ -57,7 +58,7 @@ function useSetting(){
     now_searchEngine == 'Bing' && (now_searchEngineURL = 'https://www.bing.com/search') && (now_searchEnginePOST = 'q');
     now_searchEngine == 'Baidu' && (now_searchEngineURL = 'https://www.baidu.com/baidu') && (now_searchEnginePOST = 'word');
     now_searchEngine == 'Other' && (now_searchEngineURL = getCookie('searchEngineURL')) && (now_searchEnginePOST = getCookie('searchEnginePOST'));
-    var now_backgroundURL = getCookie('backgroundURL');
+    now_backgroundURL = getCookie('backgroundURL');
     var _keyboardBg = $('#keyboardBg');
     now_backgroundURL && _keyboardBg.attr('src',getCookie('backgroundURL')) && _keyboardBg.fadeTo(2000,1) || _keyboardBg.fadeTo(2000,0);
 }
@@ -83,17 +84,18 @@ for (var i = 48; i < 91; i++) {
 $(document).ready(function(){
 
 
-                    useSetting();
-
                     if ("FLASE" != getCookie("FIRSTTIME")) {
                     setCookie("84", "http://www.taobao.com");
                     setCookie("86", "http://www.v2ex.com");
                     setCookie("87", "http://www.weibo.com");
                     setCookie("89", "http://www.youku.com");
-                    setCookie('searchEngine','Baidu');
                     setCookie("90", "http://www.zhunpai.com.cn");
+                    setCookie('backgroundURL', 'http://t.cn/R2ZvEBX');
+                    setCookie('searchEngine', 'Baidu');
                     setCookie("FIRSTTIME", "FLASE");
                     }
+
+                    useSetting();
 
                     refreshIco();
 
