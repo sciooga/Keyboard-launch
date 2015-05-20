@@ -157,7 +157,7 @@ $(document).ready(function(){
                     });
 
                     $("#keyboard ul span").mouseenter(function(){
-                    $(this).append("<div class='keySetting'><img id='deleteImg' class='deleteImg' src='delete.png'><img id='settingImg' class='settingImg' src='setting.png'></div><div class='keySettingFix'></div>");//keySettingFix is for Firefox
+                    $(this).append("<div class='keySetting'><img id='deleteImg' class='deleteImg' src='delete.png'/><img id='settingImg' class='settingImg' src='setting.png'/></div><div class='keySettingFix'></div>");//keySettingFix is for Firefox
                     $("#settingImg").click(function(){
                         var _this = $(this);
                         var _parent = _this.parent();
@@ -218,7 +218,7 @@ $(document).ready(function(){
                         height:'330px',
                         top:'5%',
                         marginLeft:'-380px'},500);
-                        _setting.html("<form id='settingDetail' style='display:none;margin:26px 60px;'><input type='checkbox' name='newWindow' value='t'/><p>新窗口打开网页（部分浏览器可能会阻止此行为）</p></br><p>选择搜索引擎：&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Google' /><p>Google&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Bing' /><p>Bing&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Baidu' /><p>Buidu</p></br><p>其他搜索引擎：</p><input type='text' name='searchEngineURL' placeholder='eg:g.openibm.com（不使用则留空）' style='width:220px;'/><p>&emsp;post&ensp;key：</p><input type='text' name='searchEnginePOST' placeholder='eg:q' style='width:36px;' /><p>&emsp;https等请自带</p></br><p>背景图片连接：</p><input type='text' name='backgroundURL' placeholder='&emsp;支持所有您能正常访问的图库，不使用则留空' style='width:280px;' /><p>&emsp;同步 bing 背景：t.cn/R2ZvEBX</p></br><p style='color:#c2c2c2'>Lovingly made by sciooga</p></br><p style='margin-top:20px;'><span id='CANCEL' style='cursor: pointer;margin:144px;'>取消</span><span id='OK' style='cursor: pointer;margin:144px;'>保存</span></p></form>");
+                        _setting.html("<form id='settingDetail' style='display:none;margin:26px 60px;'><input type='checkbox' name='newWindow' value='t'/><p>新窗口打开网页（部分浏览器可能会阻止此行为）</p><br/><p>选择搜索引擎：&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Google' /><p>Google&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Bing' /><p>Bing&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Baidu' /><p>Buidu</p><br/><p>其他搜索引擎：</p><input type='text' name='searchEngineURL' placeholder='eg:g.openibm.com（不使用则留空）' style='width:220px;'/><p>&emsp;post&ensp;key：</p><input type='text' name='searchEnginePOST' placeholder='eg:q' style='width:36px;' /><p>&emsp;https等请自带</p><br/><p>背景图片连接：</p><input type='text' name='backgroundURL' placeholder='&emsp;支持所有您能正常访问的图库，不使用则留空' style='width:280px;' /><p>&emsp;同步 bing 背景：t.cn/R2ZvEBX</p><br/><p style='color:#c2c2c2'>Lovingly made by sciooga</p><br/><p style='margin-top:20px;'><span id='CANCEL' style='cursor: pointer;margin:144px;'>取消</span><span id='OK' style='cursor: pointer;margin:144px;'>保存</span></p></form>");
                         setTimeout("$('#settingDetail').fadeIn(500)",300);
                         //read setting
                         newWindow && ($('input[name=newWindow]')[0].checked = true);
@@ -249,7 +249,7 @@ $(document).ready(function(){
                                     top:'10%',
                                     marginLeft:'-200px',
                                     opacity:'0'
-                                },500,function(){$('#setting').html("<p>&emsp;&emsp;&emsp;如果您无意修改设置请将此忽视：</p><img src='setting.png'>")
+                                },500,function(){$('#setting').html("<p>&emsp;&emsp;&emsp;如果您无意修改设置请将此忽视：</p><img src='setting.png'/>")
                                 _setting.fadeOut(1);// it will work if somebody quickly input setting twice
                                 });
 
