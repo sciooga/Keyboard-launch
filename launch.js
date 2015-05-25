@@ -128,8 +128,8 @@ $(document).ready(function(){
                                 var button = $("#"+keyCode);
                                 button.addClass('keyDownLi');
                                 button.parent().addClass('keyDownSpan');
-                                setTimeout("$('#"+keyCode+"').removeClass('keyDownLi')",80);
-                                setTimeout("$('#"+keyCode+"').parent().removeClass('keyDownSpan')",80);
+                                setTimeout(function(){button.removeClass('keyDownLi')},80);
+                                setTimeout(function(){button.parent().removeClass('keyDownSpan')},80);
                                 });
                             }
                         //This else for Firefox
