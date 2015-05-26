@@ -81,6 +81,14 @@ for (var i = 48; i < 91; i++) {
 }
 /*-----------REFRESHICO END-----------*/
 
+/*-----------ISURL START-----------*/
+function IsURL(a) {
+    var b = "^((https|http|ftp|rtsp|mms)?://)" + "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" + "(([0-9]{1,3}.){3}[0-9]{1,3}" + "|" + "([0-9a-z_!~*'()-]+.)*" + "([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]." + "[a-z]{2,6})" + "(:[0-9]{1,4})?" + "((/?)|" + "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";
+    var c = new RegExp(b);
+    return !!c.test(a);
+}
+/*-----------ISURL END-----------*/
+
 $(document).ready(function(){
 
 
@@ -99,7 +107,7 @@ $(document).ready(function(){
 
                     refreshIco();
 
-                    /*this is for plugin
+                    /*this is for extensions
                     function attention(){
                     $('.attention').addClass('attentionBlink');
                     setTimeout("$('.attention').removeClass('attentionBlink')",1600);
@@ -110,6 +118,12 @@ $(document).ready(function(){
                     },3100);*/
 
                     var _search = $("#search");
+                    _search.focus(function(){
+                        _search.attr('placeholder','                 输入关键字或网址，Tab 键切换至快捷键盘');//I don`t konw why space work on here not &emsp; ...
+                    });
+                    _search.blur(function(){
+                        _search.attr('placeholder','                     Tab 键切换至搜索框   输入设置打开设置');//I don`t konw why space work on here not &emsp; ...
+                    });
                     $(document).keydown(function(event){
                         var keyCode = event.which;
                         if (_search.is(":focus")){
@@ -119,7 +133,8 @@ $(document).ready(function(){
                                 window.event.returnValue = false;
                             }
                             if (keyCode == 13){
-                                _search.val() && openURL(now_searchEngineURL+'?'+now_searchEnginePOST+'='+_search.val());
+                                var searchTXT = _search.val();
+                                IsURL(searchTXT) && !openURL(buildURL(searchTXT)) || searchTXT && openURL(now_searchEngineURL+'?'+now_searchEnginePOST+'='+_search.val());
                             }
                             //keyCode == 229 when use IME
                             if (keyCode == 229){
@@ -218,7 +233,7 @@ $(document).ready(function(){
                         height:'330px',
                         top:'5%',
                         marginLeft:'-380px'},500);
-                        _setting.html("<form id='settingDetail' style='display:none;margin:26px 60px;'><input type='checkbox' name='newWindow' value='t'/><p>新窗口打开网页（部分浏览器可能会阻止此行为）</p><br/><p>选择搜索引擎：&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Google' /><p>Google&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Bing' /><p>Bing&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Baidu' /><p>Buidu</p><br/><p>其他搜索引擎：</p><input type='text' name='searchEngineURL' placeholder='eg:g.openibm.com（不使用则留空）' style='width:220px;'/><p>&emsp;post&ensp;key：</p><input type='text' name='searchEnginePOST' placeholder='eg:q' style='width:36px;' /><p>&emsp;https等请自带</p><br/><p>背景图片连接：</p><input type='text' name='backgroundURL' placeholder='&emsp;支持所有您能正常访问的图库，不使用则留空' style='width:280px;' /><p>&emsp;同步 bing 背景：t.cn/R2ZvEBX</p><br/><p style='color:#c2c2c2'>Lovingly made by sciooga</p><br/><p style='margin-top:20px;'><span id='CANCEL' style='cursor: pointer;margin:144px;'>取消</span><span id='OK' style='cursor: pointer;margin:144px;'>保存</span></p></form>");
+                        _setting.html("<form id='settingDetail' style='display:none;margin:26px 60px;'><input type='checkbox' name='newWindow' value='t'/><p>新窗口打开网页（部分浏览器可能会阻止此行为）</p><br/><p>选择搜索引擎：&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Google' /><p>Google&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Bing' /><p>Bing&emsp;&emsp;&emsp;</p><input type='radio' name='searchEngine' value='Baidu' /><p>Buidu</p><br/><p>其他搜索引擎：</p><input type='text' name='searchEngineURL' placeholder='eg:g.openibm.com（不使用则留空）' style='width:220px;'/><p>&emsp;post&ensp;key：</p><input type='text' name='searchEnginePOST' placeholder='eg:q' style='width:36px;' /><p>&emsp;https等请自带</p><br/><p>背景图片连接：</p><input type='text' name='backgroundURL' placeholder='&emsp;支持所有您能正常访问的图库，不使用则留空' style='width:280px;' /><p>&emsp;同步 bing 背景：t.cn/R2ZvEBX</p><br/><p style='color:#c2c2c2'>Lovingly made by sciooga （<a href='https://github.com/sciooga/Keyboard-launch' target='_blank' style='color:#c2c2c2'>♥ Github</a>）</p><br/><p style='margin-top:20px;'><span id='CANCEL'>取消</span><span id='OK'>保存</span></p></form>");
                         setTimeout("$('#settingDetail').fadeIn(500)",300);
                         //read setting
                         newWindow && ($('input[name=newWindow]')[0].checked = true);
