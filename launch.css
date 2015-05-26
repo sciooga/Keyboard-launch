@@ -5,6 +5,11 @@ body
     margin: 0;
     padding: 0;
     background-color: #eee;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     //font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", \5FAE\8F6F\96C5\9ED1, Sans-serif, STHeiti !important;
 }
 
@@ -44,7 +49,18 @@ div#setting img:hover
 form#settingDetail p
 {
     display: inline-block;
+    color: #666;
     //position: relative; top: 2px;//chrome align checkbox、radio and text with <p>
+}
+
+span#OK, span#CANCEL
+{
+    cursor: pointer;
+    margin: 0px 120px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
 }
 
 input#search
@@ -74,11 +90,6 @@ div#keyboard
     bottom: 20%;
     left: 50%;
     margin-left: -430px;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 div#keyboardPad
@@ -218,7 +229,7 @@ img#keyboardBg
     height: 100%;
 }
 
-/*this is for plugin
+/*this is for extensions
 div.attention
 {
     position: absolute;
