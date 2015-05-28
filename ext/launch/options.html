@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="options.css" />
+    <script type="text/javascript" language="javascript" charset="UTF-8" src="jquery191.js"></script>
+    <script type="text/javascript" language="javascript" charset="UTF-8" src="base.js"></script>
+    <script type="text/javascript" language="javascript" charset="UTF-8" src="options.js"></script>
+    <title>设置</title>
+</head>
+<body>
+<form id='settingDetail' >
+    <input type='checkbox' name='newWindow' value='t'/>新窗口打开网页&emsp;&emsp;&emsp;<input type='checkbox' name='newMsg' value='t'/>新消息提醒：[&ensp;<input type='checkbox' name='msg_weibo' value='t' disabled/>微博&emsp;&emsp;&emsp;<input type='checkbox' name='msg_zhihu' value='t' disabled/>知乎&emsp;&emsp;&emsp;<input type='checkbox' name='msg_v2ex' value='t' disabled/>V2EX&ensp;]<br/>
+    选择搜索引擎：&emsp;&emsp;&emsp;<input type='radio' name='searchEngine' value='Google'/>Google
+    &emsp;&emsp;&emsp;<input type='radio' name='searchEngine' value='Bing'/>Bing
+    &emsp;&emsp;&emsp;<input type='radio' name='searchEngine' value='Baidu'/>Buidu<br/>
+    其他搜索引擎：<input type='text' name='searchEngineURL' placeholder='eg:g.openibm.com（不使用则留空）'/>&emsp;post&ensp;key：<input type='text' name='searchEnginePOST' placeholder='eg:q'/>&emsp;https等请自带<br/>
+    背景图片连接：<input type='text' name='backgroundURL' placeholder='&emsp;支持所有您能正常访问的图库，不使用则留空'/>&emsp;同步 bing 背景：t.cn/R2ZvEBX<br/>
+    当前启动快捷键：<span id="shortcutKey"></span><br/>
+    快捷键请移步 Chrome <扩展程序>（chrome://extensions/） 底部<键盘快捷键>设置。<br/>
+    Lovingly made by sciooga （<a href="https://github.com/sciooga/Keyboard-launch" target="_blank">♥ Github</a>）<br/>
+        <span id='CANCEL' >取消</span>
+        <span id='OK' >保存</span>
+</form>
+</body>
+</html>
