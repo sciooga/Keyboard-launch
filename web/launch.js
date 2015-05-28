@@ -60,6 +60,7 @@ function useSetting(){
     now_searchEngine == 'Other' && (now_searchEngineURL = getCookie('searchEngineURL')) && (now_searchEnginePOST = getCookie('searchEnginePOST'));
     now_backgroundURL = getCookie('backgroundURL');
     var _keyboardBg = $('#keyboardBg');
+    now_backgroundURL && _keyboardBg.attr('src',getCookie('backgroundURL')) && _keyboardBg.fadeTo(2000,1) || _keyboardBg.fadeTo(2000,0);
 }
 /*-----------USESETTING END-----------*/
 
@@ -147,7 +148,6 @@ $(document).ready(function(){
                     setCookie("87", "http://www.weibo.com");
                     setCookie("89", "http://www.youku.com");
                     setCookie("90", "http://www.zhunpai.com.cn");
-                    setCookie('backgroundURL', 'http://t.cn/R2ZvEBX');
                     setCookie('searchEngine', 'Baidu');
                     setCookie("FIRSTTIME", "FLASE");
                     }
