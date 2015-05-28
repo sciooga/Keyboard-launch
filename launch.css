@@ -109,8 +109,8 @@ div#keyboardPad
 
 div#keyboard ul
 {
-    padding: 0;
-    margin: 10;
+    padding: 0px;
+    margin: 16px;
     height: 50px;
     text-align: center;
     display: block;
@@ -191,7 +191,7 @@ div.keySetting
     border-radius: 20px;
     background: #e6e6e6;
 
-    -webkit-box-shadow: 0 0 18x 1px #bbb;
+    -webkit-box-shadow: 0 0 18px 1px #bbb;
     -moz-box-shadow: 0 0 18px 1px #bbb;
     box-shadow: 0 0 18px 1px #bbb;
 }
@@ -241,7 +241,7 @@ div.attention
     background-color: #faa;
     border-radius: 6px;
 
-    -webkit-box-shadow: 0 0 8x #f00;
+    -webkit-box-shadow: 0 0 8px #f00;
     -moz-box-shadow: 0 0 8px #f00;
     box-shadow: 0 0 8px #f00;
 
