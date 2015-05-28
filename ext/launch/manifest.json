@@ -28,8 +28,7 @@
       "jquery191.js",
       "base.js",
       "background.js"
-    ],
-    "persistent": false
+    ]
   },
   "commands": {
     "newTab": {
