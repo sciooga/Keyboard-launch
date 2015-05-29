@@ -12,6 +12,8 @@ chrome.alarms.onAlarm.addListener(checkMsg);
 //var a = new RegExp("有(.*?)条新私信");
 //a.exec(data)[1];
 
+//http://www.zhihu.com/noti7/readall 知乎私信接口
+
 //http://www.zhihu.com/noti7/new知乎消息：回答关注问题、感谢、关注
 
 //匹配知乎新关注用户名 http://www.zhihu.com/noti7/calendar
