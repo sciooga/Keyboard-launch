@@ -28,7 +28,7 @@ chrome.alarms.onAlarm.addListener(checkMsg);
 
 
 function checkMsg(){
-    getCookie('newMsg') || bread;
+    getCookie('newMsg') || break;
     //check weibo
     if (getCookie('msg_weibo')){
         $.get("http://rm.api.weibo.com/2/remind/push_count.json?source=3818214747",function(data,status){
