@@ -75,9 +75,11 @@ function checkMsg(){
     if (getCookie('msg_v2ex')){
         $.get("https://www.v2ex.com/settings",function(data,status){
             if(status == 'success'){
-                var a = new RegExp("([0-9]*?) 条未读提醒");
-                var sign = a.exec(data)[1];
-                if(sign!='0'){
+                var sign = RegExp("([0-9]*?) 条未读提醒").exec(data);
+                sign = sign != null && sign[1] || '未登录';
+                if ( sign == '未登录' ){
+                    alert('v2ex 未登录');
+                }else if(sign!='0'){
                     setCookie('msg_v2ex', 'n');
                 }else{
                     setCookie('msg_v2ex', 't');
