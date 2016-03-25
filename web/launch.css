@@ -81,6 +81,10 @@ input:focus
     outline: 1px solid #e69622;
 }
 
+input::-ms-input-placeholder{text-align: center;} 
+input::-webkit-input-placeholder{text-align: center;} 
+
+
 /*-----------KEYBOARD START-----------*/
 
 div#keyboard
