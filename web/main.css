@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: Sans-serif;
+}
+
+/*-----------SEARCH-----------*/
+
+#search {
+    height: 40px;
+    width: 500px;
+    font-size: 1em;
+    padding: 0 10px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -250px;
+    box-sizing: border-box;
+}
+
+#search:focus {
+    outline: 1px solid #eee;
+}
+
+#search::-ms-input-placeholder {
+    text-align: center;
+}
+
+#search::-webkit-input-placeholder {
+    text-align: center;
+} 
+
+/*-----------KEYBOARD-----------*/
+
+#keyboard {
+    width: 860px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    margin-left: -430px;
+}
+
+#keyboard ul {
+    padding: 0px;
+    margin: 16px;
+    height: 50px;
+    text-align: center;
+    display: block;
+}
+
+#keyboard ul span {
+    position: relative;
+    display: inline-block;
+    margin: 0 4px;
+    height: 54px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 1px 0px #eee;
+    -moz-box-shadow: inset 0 0 1px 0px #eee;
+    box-shadow: inset 0 0 1px 0px #eee;
+}
+
+#keyboard ul li {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0px 2px;
+    padding: 16px 22px;
+    background: #999;
+    color: #333;
+    border-radius: 8px;
+    display: inline-block;
+    list-style: none;
+    border-top: 1px solid #fff;
+    background: #fff;
+    -webkit-box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
+    -moz-box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
+    box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
+}
+
+#keyboard ul span:hover, #keyboard ul span.keyDownSpan {
+    margin: 0px 5px;
+    border-bottom: 3px solid #fff;
+    box-shadow: inset 0 0px 8px #333;
+    -moz-box-shadow: inset 0 0px 8px #333;
+    -webkit-box-shadow: inset 0 0px 8px #333;
+}
+
+#keyboard ul span:hover li, #keyboard ul span li.keyDownLi {
+    padding: 15px 20px 16px;
+    margin: 1px 3px 0px;
+    border-top: 1px solid #fafafa;
+    -webkit-box-shadow: inset 0 0 28px 5px #d2d2d2;
+    -moz-box-shadow: inset 0 0 28px 5px #d2d2d2;
+    box-shadow: inset 0 0 28px 5px #d2d2d2;
+
+    -webkit-transform: scale(.98);
+    -moz-transform: scale(.98);
+    -o-transform: scale(.98);
+}
+
+.fav {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    opacity: .4;
+}
+
+/*-----------KEYBOARD-----------*/
+
+#setting {
+    position: absolute;
+    bottom: -320px;
+    height: 320px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 20%;
+    color: #666;
+    background: #fff;
+    box-shadow: 0 0 12px #ccc;
+    transition: bottom .3s;
+}
+
+#setting .slideSwitch {
+    display: inline-block;
+    vertical-align: bottom;
+    background: #e4e4e4;
+    height: 20px;
+    width: 38px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#setting .slideSwitch:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    transition: all .2s;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.4);
+}
+
+#setting .slideSwitch.active {
+    background: #4bd863;
+}
+
+#setting .slideSwitch.active:after {
+    left: 20px;
+}
+
+#setting .close {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #ccc;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+#setting .close:hover {
+    border: 1px solid #999;
+    color: #222;
+}
+
+#setting table {
+    width: 100%;
+}
+
+#setting table td {
+    width: 50%;
+    padding: 10px 22px;
+}
+
+#setting table td:first-child {
+    text-align: right;
+}
