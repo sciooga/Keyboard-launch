@@ -106,6 +106,7 @@
         keyUp(key)
 
         if (url && key == keyCache && document.activeElement != $search) openUrl(url)
+        keyCache = 0
     }
 
     $keyboard.onclick = function(e) {
