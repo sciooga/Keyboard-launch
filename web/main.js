@@ -85,8 +85,10 @@
         $setting.style.bottom = '-320px'
     }
 
+    var keyCache = 0
     document.onkeydown = function(e) {
         var key = e.which || e.keyCode || 0
+        keyCache = key
         if (key == 9) {
             window.event ? window.event.returnValue = false : e.preventDefault()
             if (document.activeElement == $search) {
@@ -103,7 +105,7 @@
             url = localStorage[key]
         keyUp(key)
 
-        if (url && document.activeElement != $search) openUrl(url)
+        if (url && key == keyCache && document.activeElement != $search) openUrl(url)
     }
 
     $keyboard.onclick = function(e) {
@@ -126,3 +128,4 @@
         localStorage.searchEngine = e.target.value
     }
 })()
+
