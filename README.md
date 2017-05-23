@@ -6,3 +6,5 @@ Simple and useful, one key to launch, so beautiful.
 http://i.huguotao.com
 
 感谢 [ldong](https://github.com/ldong) 将其发布至 Chrome webstore ，下载连接：[Keyboard-launch](https://chrome.google.com/webstore/detail/keyboard-launch/oocaffggffdbbefcmjbgkpbgehpnbadh) 
+
+[GitHub](https://github.com/sciooga/Keyboard-launch)
