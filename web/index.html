@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <title>新标签页</title>
+    </head>
+    <body tabindex="2">
+    <input id="search" type="text" placeholder="Tab 键切换至搜索框 输入设置打开设置" tabindex="1">
+    <div id="keyboard">
+        <ul>
+            <span data-key="49"><li>1</li></span>
+            <span data-key="50"><li>2</li></span>
+            <span data-key="51"><li>3</li></span>
+            <span data-key="52"><li>4</li></span>
+            <span data-key="53"><li>5</li></span>
+            <span data-key="54"><li>6</li></span>
+            <span data-key="55"><li>7</li></span>
+            <span data-key="56"><li>8</li></span>
+            <span data-key="57"><li>9</li></span>
+            <span data-key="48"><li>0</li></span>
+        </ul>
+        <ul>
+            <span data-key="81"><li>Q</li></span>
+            <span data-key="87"><li>W</li></span>
+            <span data-key="69"><li>E</li></span>
+            <span data-key="82"><li>R</li></span>
+            <span data-key="84"><li>T</li></span>
+            <span data-key="89"><li>Y</li></span>
+            <span data-key="85"><li>U</li></span>
+            <span data-key="73"><li>I</li></span>
+            <span data-key="79"><li>O</li></span>
+            <span data-key="80"><li>P</li></span>
+        </ul>
+        <ul>
+            <span data-key="65"><li>A</li></span>
+            <span data-key="83"><li>S</li></span>
+            <span data-key="68"><li>D</li></span>
+            <span data-key="70"><li>F</li></span>
+            <span data-key="71"><li>G</li></span>
+            <span data-key="72"><li>H</li></span>
+            <span data-key="74"><li>J</li></span>
+            <span data-key="75"><li>K</li></span>
+            <span data-key="76"><li>L</li></span>
+        </ul>
+        <ul>
+            <span data-key="90"><li>Z</li></span>
+            <span data-key="88"><li>X</li></span>
+            <span data-key="67"><li>C</li></span>
+            <span data-key="86"><li>V</li></span>
+            <span data-key="66"><li>B</li></span>
+            <span data-key="78"><li>N</li></span>
+            <span data-key="77"><li>M</li></span>
+        </ul>
+    </div>
+    <div id="setting">
+        <div align="right"><span class="close">ㄨ</span></div>
+        <table>
+            <tr>
+                <td>新窗口打开网页</td>
+                <td><span id="newWindow" class="slideSwitch"></span></td>
+            </tr>
+            <tr>
+                <td>搜索引擎</td>
+                <td>
+                    <select id="searchEngine">
+                        <option value="https://www.google.com/search?q=">Google</option>
+                        <option value="https://www.baidu.com/s?wd=">Baidu</option>
+                        <option value="https://www.bing.com/search?q=">Bing</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>默认设置</td>
+                <td><input type="button" value="恢复" onclick="localStorage.clear() || location.reload()"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center">鼠标点击按键即可设置对应网址</td>
+            </tr>
+        </table>
+    </div>
+    <script src="main.js"></script>
+    </body>
+</html>
