@@ -55,7 +55,8 @@ body {
     display: block;
 }
 
-#keyboard ul span {
+#keyboard ul li {
+    cursor: pointer;
     position: relative;
     display: inline-block;
     margin: 0 4px;
@@ -66,8 +67,7 @@ body {
     box-shadow: inset 0 0 1px 0px #eee;
 }
 
-#keyboard ul li {
-    cursor: pointer;
+#keyboard ul span {
     height: 16px;
     width: 16px;
     margin: 0px 2px;
@@ -84,7 +84,7 @@ body {
     box-shadow: inset 0 0 36px #ddd, 0 3px 0 #ddd, 0 4px 2px #666;
 }
 
-#keyboard ul span:hover, #keyboard ul span.keyDownSpan {
+#keyboard ul li:hover, #keyboard ul li.keyDownLi {
     margin: 0px 5px;
     border-bottom: 3px solid #fff;
     box-shadow: inset 0 0px 8px #333;
@@ -92,7 +92,7 @@ body {
     -webkit-box-shadow: inset 0 0px 8px #333;
 }
 
-#keyboard ul span:hover li, #keyboard ul span li.keyDownLi {
+#keyboard ul li:hover span, #keyboard ul li span.keyDownSpan {
     padding: 15px 20px 16px;
     margin: 1px 3px 0px;
     border-top: 1px solid #fafafa;
