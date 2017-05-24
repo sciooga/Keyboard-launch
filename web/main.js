@@ -3,7 +3,7 @@
         keys = {},
         $search = document.querySelector('#search'),
         $keyboard = document.querySelector('#keyboard'),
-        $keys = document.querySelectorAll('#keyboard span'),
+        $keys = document.querySelectorAll('#keyboard li'),
         $setting = document.querySelector('#setting'),
         $close = document.querySelector('.close'),
         $newWindow = document.querySelector('#newWindow'),
@@ -25,15 +25,15 @@
         if (!$keys.hasOwnProperty(i)) continue
 
         keys[$keys[i].dataset.key] = {
-            'span': $keys[i],
-            'li': $keys[i].firstElementChild
+            'li': $keys[i],
+            'span': $keys[i].firstElementChild
         }
     }
 
     // set favicon
     for (var i = 48; i < 91; i++) {
         var url = localStorage[i]
-        if (url) addFavicon(keys[i]['span'], getFavicon(url))
+        if (url) addFavicon(keys[i]['li'], getFavicon(url))
     }
 
     // read settings
@@ -48,11 +48,11 @@
         return url.split('/').slice(0,3).join('/') + "/favicon.ico"
     }
 
-    function addFavicon($span, src) {
+    function addFavicon($li, src) {
         var img = document.createElement('img')
         img.src = src
         img.className = 'fav'
-        $span.appendChild(img)
+        $li.appendChild(img)
     }
 
     function keyDown(key) {
@@ -110,7 +110,7 @@
     }
 
     $keyboard.onclick = function(e) {
-        if (e.target.tagName != 'LI') return
+        if (e.target.tagName != 'SPAN') return
         var name = e.target.innerText,
             key = e.target.parentElement.dataset.key || 0,
             url = prompt("请输入按键 " + name + " 对应的网址", localStorage[key] || '')
